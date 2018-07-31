@@ -33,7 +33,8 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-// botao salva para chamar a foto
+// botao salva para chamar a foto do celualar
+    //and
     fun View.chamaFoto2() {
         setContentView(R.layout.foto)
 
