@@ -7,21 +7,24 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
-import kotlinx.android.synthetic.main.foto.*
+import kotlinx.android.synthetic.main.activity_foto.*
+import kotlinx.android.synthetic.main.activity_foto.*
+import kotlinx.android.synthetic.main.activity_pessoa_juridica1.*
 
 class MainActivity : AppCompatActivity() {
 
     fun View.chamaTela1() {
-        setContentView(R.layout.tela1)
+        setContentView(R.layout.activity_pessoa_fisica1)
     }
 
     fun View.chamaTela2() {
-        setContentView(R.layout.tela2)
+        setContentView(R.layout.activity_pessoa_juridica1)
     }
 
     fun View.chamaFoto1() {
-        setContentView(R.layout.foto)
+        setContentView(R.layout.activity_foto)
 
         tirarFoto.setOnClickListener {
             val callCameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -30,20 +33,18 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+
     }
 
 
-// botao salva para chamar a foto do celualar
-    //and
     fun View.chamaFoto2() {
-        setContentView(R.layout.foto)
+        setContentView(R.layout.activity_foto)
 
         tirarFoto.setOnClickListener {
             val callCameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             if (callCameraIntent.resolveActivity(packageManager) != null) {
                 startActivityForResult(callCameraIntent, CAMERA_REQUEST_CODE)
             }
-
         }
     }
 
@@ -56,8 +57,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -65,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
         when (requestCode) {
             CAMERA_REQUEST_CODE -> {
-                if (resultCode == Activity.RESULT_OK && data != null) {
+                if (resultCode == Activity.RESULT_OK && data != null &&  tirarFoto) {
                     lugarDaFoto.setImageBitmap(data.extras.get("data") as Bitmap)
                 }
             }
@@ -75,6 +74,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
 
 
     }

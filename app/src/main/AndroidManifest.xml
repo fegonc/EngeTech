@@ -21,7 +21,24 @@
         <activity
             android:name=".po"
             android:label="@string/title_activity_po"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PessoaFisica"
+            android:label="@string/title_activity_pessoa_fisica"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".PessoaFisica1" />
+        <activity android:name=".PessoaJuridica1" />
+        <activity android:name=".Foto" />
+        <activity android:name=".TipoDeResidencia" />
+        <activity
+            android:name=".TipoEstrutura"
+            android:label="@string/title_activity_tipo_estrutura"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Tipos"></activity>
     </application>
 
 </manifest>
